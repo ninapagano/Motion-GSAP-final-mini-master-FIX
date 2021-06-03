@@ -1,7 +1,7 @@
 //IMPORTS
 import { gsap } from "gsap";
-import { MorphSVGPlugin} from "gsap/MorphSVGPlugin";
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+// import { MorphSVGPlugin} from "gsap/MorphSVGPlugin";
+// import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 // import {CustomWiggle} from "gsap/CustomWiggle";
 // import { GSDevTools } from "gsap/GSDevTools";
 // import {MotionPathPlugin} from "gsap/MotionPathPlugin";
@@ -9,7 +9,7 @@ import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
 
 //register Plugins
-gsap.registerPlugin(MorphSVGPlugin, DrawSVGPlugin,);
+// gsap.registerPlugin(MorphSVGPlugin, DrawSVGPlugin,);
 
 //**** SELECT ELEMENTS without jQuery ****\\
 
@@ -53,7 +53,7 @@ ready(() => {
     gsap.set("#mywheel1", {transformOrigin: "50% 50%", alpha:0});
     gsap.set("#mywheel2", {transformOrigin: "50% 50%", alpha:0});
     gsap.set("#backgroundb1", {transformOrigin: "50% 50%"});
-    gsap.set("#backgroundw1", {transformOrigin: "50% 50%"});
+    // gsap.set("#backgroundw1", {transformOrigin: "50% 50%"});
     gsap.set("#logo2", {transformOrigin: "50% 50%"});
     // gsap.set("#speed", {transformOrigin: "center top", alpha:0});
     // gsap.set("#gas", {transformOrigin: "center top", alpha:0});
@@ -137,8 +137,12 @@ ready(() => {
 // gearsquare and D turn orange
 
 // gas icon flickers and goes yellow
-
+.from ("#gas-symbol", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#gas-symbol", {alpha:1, duration:.5, scale:0.8, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-symbol", {alpha:1, duration:.5, scale:1, ease:"bounce", transformOrigin:"50% 50%"})
 // gas bubbles turn color staggered 1 at a time 
+
+// gas-color1
 
 // speed dial rotates slowly
 .from ("#spinner", { duration:1.3, transformOrigin:"50% 50%"})
@@ -160,12 +164,12 @@ ready(() => {
 
 // white background comes in
 
-.from("#backgroundw1", {alpha:0, scale:3, duration:1.5, ease:"expo"}, "backgroundw1")
+// .from("#backgroundw1", {alpha:0, scale:3, duration:1.5, ease:"expo"}, "backgroundw1")
 
-// black mini comes in from scale:0.5
+// // black mini comes in from scale:0.5
 
-.from ("#logo2", {alpha:0, duration:0.8, scale:1}, "logo2")
-.to ("#logo2", {scale:3, alpha:0, duration:1, ease:"power4.out"}, "logo2")
+// .from ("#logo2", {alpha:0, duration:0.8, scale:1}, "logo2")
+// .to ("#logo2", {scale:3, alpha:0, duration:1, ease:"power4.out"}, "logo2")
 
 
 
