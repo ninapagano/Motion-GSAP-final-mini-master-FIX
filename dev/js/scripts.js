@@ -53,6 +53,8 @@ ready(() => {
     gsap.set("#mywheel1", {transformOrigin: "50% 50%", alpha:0});
     gsap.set("#mywheel2", {transformOrigin: "50% 50%", alpha:0});
     gsap.set("#backgroundb1", {transformOrigin: "50% 50%"});
+    gsap.set("#backgroundw1", {transformOrigin: "50% 50%"});
+    gsap.set("#logo2", {transformOrigin: "50% 50%"});
     // gsap.set("#speed", {transformOrigin: "center top", alpha:0});
     // gsap.set("#gas", {transformOrigin: "center top", alpha:0});
     // gsap.set("#gear", {transformOrigin: "center top", alpha:0});
@@ -89,7 +91,7 @@ ready(() => {
 
 // WHEEL1 FADE IN
     tl.from("#logo", { duration:1, scale:1, ease:"back"}, "logo")
-    .to("#logo", {alpha:1, duration:1, ease:"back"}, "logo")
+    .to("#logo", {alpha:1, duration:2, ease:"bounce"}, "logo")
 
     .add("logowing", "-=0.2")
     .to ("#logowing", {alpha:1, duration:1, ease:"back", transformOrigin:"50% 50%"},"logowing")
@@ -98,13 +100,13 @@ ready(() => {
     
     
     .from("#backgroundb1", {alpha:0, duration:1.5, ease:"expo"}, "backgroundb1")
-    .from("#mywheel1", { duration:0.3, scale:1, ease:"bounce"}, "mywheel1")
-    .to("#mywheel1", {alpha:1, duration:0.4, ease:"bounce"}, "mywheel1")
+    .from("#mywheel1", { duration:1, scale:3, ease:"expo"}, "mywheel1")
+    .to("#mywheel1", {alpha:1, duration:0.4, ease:"expo"}, "mywheel1")
 
     .add("mywheel2", "-=0.5")
-    .to ("#mywheel2", {alpha:1, duration:3.5, rotation:360, ease:"bounce", transformOrigin:"50% 50%"},"mywheel2")
+    .to ("#mywheel2", {alpha:1, duration:2, rotation:360, ease:"bounce+=0.5", transformOrigin:"50% 50%"},"mywheel2")
     .to("#mywheel2", {scale: 0.5, transformOrigin:"center bottom"})
-    .to("#mywheel1", {alpha:0, duration:0.4}, "mywheel2+=2")
+    .to("#mywheel1", {alpha:0, duration:0.2}, "mywheel2+=2")
 
 // Dial circles Fade UP
     .from("#circle1", {alpha:0, duration:0.5, scale:0.25, ease:"expo"})
@@ -121,14 +123,14 @@ ready(() => {
     .to("#circle3", {scale:3, x:"+=100", y:"-=100",  duration:0.3, ease:"back", transformOrigin:"50% 50%"}, "circles")
 
   // gears enter
-    .from ("#speed", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.15")
-    .from("#gas", {alpha:0, duration:0.15, scale:0.5, transformOrigin:"50% 50%"}, "circles+=0.15" )
+    .from ("#speed", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.60")
+    .from("#gas", {alpha:0, duration:0.15, scale:0.5, transformOrigin:"50% 50%"}, "circles+=0.30" )
     //fix
-    .from("#gear", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.15")
+    .from("#gear", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.90")
 
 
-  .from ("#gearsquare", {scale:2, duration:.5, transformOrigin:"center bottom"})
-  .to ("#gearsquare", {y:"+=100",duration:.5, transformOrigin:"center bottom"})
+  .from ("#gearsquare", {scale:2, duration:1.5, transformOrigin:"center bottom"})
+  .to ("#gearsquare", {y:"+=100",duration:.7, transformOrigin:"center bottom"})
   // fill:#FF5200,
 
 
@@ -139,21 +141,31 @@ ready(() => {
 // gas bubbles turn color staggered 1 at a time 
 
 // speed dial rotates slowly
+.from ("#spinner", { duration:1.3, transformOrigin:"50% 50%"})
+.to ("#spinner", {alpha:1, duration:4, rotation:90, ease:"expo", transformOrigin:"50% 50%"})
 
 // speed bubbles turn color staggered 1 at a time 
 
 // speed wiggles and goes to base (spin and bubbles)
+.to ("#spinner", { duration:1, transformOrigin:"50% 50%"})
+// .to ("#spinner", {scale:1, duration:0.5, ease:"expo")
+.to ("#spinner", { duration:4, rotation:-2, ease:"expo", transformOrigin:"50% 50%"})
 
 // gas goes to base (bubbles)
 
 // drive goes to base and goes back to white
+// .add("gearsquare", "-=0.5")
+.from ("#gearsquare", { duration:1})
+.to ("#gearsquare", {y:"-=100", ease:"bounce", duration: 1})
 
 // white background comes in
 
+.from("#backgroundw1", {alpha:0, scale:3, duration:1.5, ease:"expo"}, "backgroundw1")
+
 // black mini comes in from scale:0.5
 
-
-
+.from ("#logo2", {alpha:0, duration:0.8, scale:1}, "logo2")
+.to ("#logo2", {scale:3, alpha:0, duration:1, ease:"power4.out"}, "logo2")
 
 
 
