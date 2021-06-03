@@ -2,13 +2,14 @@
 import { gsap } from "gsap";
 import { MorphSVGPlugin} from "gsap/MorphSVGPlugin";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+// import {CustomWiggle} from "gsap/CustomWiggle";
 // import { GSDevTools } from "gsap/GSDevTools";
 // import {MotionPathPlugin} from "gsap/MotionPathPlugin";
 // import {CustomEase} from "gsap/CustomEase";
-// import {CustomWiggle} from "gsap/CustomWiggle";
+
 
 //register Plugins
-gsap.registerPlugin(MorphSVGPlugin, DrawSVGPlugin);
+gsap.registerPlugin(MorphSVGPlugin, DrawSVGPlugin,);
 
 //**** SELECT ELEMENTS without jQuery ****\\
 
@@ -47,6 +48,7 @@ ready(() => {
 
   // INTRO BASE
     gsap.set("#logo", {transformOrigin: "50% 50%"});
+    gsap.set("#logowing", {transformOrigin: "50% 50%"});
     gsap.set("#minitype", {transformOrigin: "50% 50%"});
     gsap.set("#mywheel1", {transformOrigin: "50% 50%", alpha:0});
     gsap.set("#mywheel2", {transformOrigin: "50% 50%", alpha:0});
@@ -86,7 +88,16 @@ ready(() => {
 
 
 // WHEEL1 FADE IN
-    tl.from("#backgroundb1", {alpha:0, duration:1.5, ease:"expo"}, "backgroundb1")
+    tl.from("#logo", { duration:1, scale:1, ease:"back"}, "logo")
+    .to("#logo", {alpha:1, duration:1, ease:"back"}, "logo")
+
+    .add("logowing", "-=0.2")
+    .to ("#logowing", {alpha:1, duration:1, ease:"back", transformOrigin:"50% 50%"},"logowing")
+    .to("#logowing", {x:"+=1000"})
+    .to("#logo", {alpha:0, duration:1})
+    
+    
+    .from("#backgroundb1", {alpha:0, duration:1.5, ease:"expo"}, "backgroundb1")
     .from("#mywheel1", { duration:0.3, scale:1, ease:"bounce"}, "mywheel1")
     .to("#mywheel1", {alpha:1, duration:0.4, ease:"bounce"}, "mywheel1")
 
@@ -107,13 +118,46 @@ ready(() => {
     .to("#circle1", {scale:3, x:"-=100", y:"+=100",  duration:0.3, ease:"back", transformOrigin:"100% 50%"}, "circles")
     .to("#circle2", {scale:3, duration:0.3, ease:"back", transformOrigin:"50% 100%"}, "circles")
     //fix
-    .to("#circle3", {alpha:0, y:"-=225", x:"+=150", duration:0.5, ease:"back"})
+    .to("#circle3", {scale:3, x:"+=100", y:"-=100",  duration:0.3, ease:"back", transformOrigin:"50% 50%"}, "circles")
 
   // gears enter
     .from ("#speed", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.15")
     .from("#gas", {alpha:0, duration:0.15, scale:0.5, transformOrigin:"50% 50%"}, "circles+=0.15" )
     //fix
-    .from("#gear", {alpha:0, y:100, duration:0.4, scale:0.5})
+    .from("#gear", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.15")
+
+
+  .from ("#gearsquare", {scale:2, duration:.5, transformOrigin:"center bottom"})
+  .to ("#gearsquare", {y:"+=100",duration:.5, transformOrigin:"center bottom"})
+  // fill:#FF5200,
+
+
+// gearsquare and D turn orange
+
+// gas icon flickers and goes yellow
+
+// gas bubbles turn color staggered 1 at a time 
+
+// speed dial rotates slowly
+
+// speed bubbles turn color staggered 1 at a time 
+
+// speed wiggles and goes to base (spin and bubbles)
+
+// gas goes to base (bubbles)
+
+// drive goes to base and goes back to white
+
+// white background comes in
+
+// black mini comes in from scale:0.5
+
+
+
+
+
+
+
 
   // gears up
   // .to("#speed", {alpha:0, y:"-=50", duration:0.5})
@@ -130,30 +174,36 @@ ready(() => {
 
   }
 
+// function wigTL(){
+// let tl = gsap.timeline();
+//     CustomWiggle.create("myWiggle", {wiggles: 10, type:"uniform"});
+//   // ***********  fadeInTL init ****************
+//     gsap.set("#speed", { y:"+=200", delay:2});
+
+//     gsap.to("#speed", {duration:1, y:"1400", ease:"myWiggle"});
+
+//   }
+  // function logomorphTL(){
+
+  //   let tl = gsap.timeline();
+  //   // MORPH LOGO
+  //     tl.from("#logo", { duration:1, scale:3, ease:"expo"}, "logo")
+  //     .from ("#minitype", {alpha:0, duration:0.8, scale:3}, "minitype")
+  //     .from("#logo", {alpha:0, duration:1, ease:"expo"}, "logo")
+  //     //.from ("#logo", {alpha:0})
+  //         .to ("#logo", {duration:2, morphSVG: "#logowing"}, "+=1")
+  //     .to ("#logo", {duration:2, morphSVG: "#logo2"}, "+=1")
+
+  //   // //background/ wheel 1 to 2 MORPH
+  //   //     .from ("#mywheel1", {alpha:0})
+  //   //     .to ("#mywheel1", {duration:2, morphSVG: "#mywheel2"}, "+=1")
 
 
 
-  function logomorphTL(){
+  //   ;//tl END
+  //   return tl;
 
-    let tl = gsap.timeline();
-    // MORPH LOGO
-      tl.from("#logo", { duration:1, scale:3, ease:"expo"}, "logo")
-      .from ("#minitype", {alpha:0, duration:0.8, scale:3}, "minitype")
-      .from("#logo", {alpha:0, duration:1, ease:"expo"}, "logo")
-      //.from ("#logo", {alpha:0})
-          .to ("#logo", {duration:2, morphSVG: "#logowing"}, "+=1")
-      .to ("#logo", {duration:2, morphSVG: "#logo2", ease:"bounce"}, "+=1")
-
-    // //background/ wheel 1 to 2 MORPH
-    //     .from ("#mywheel1", {alpha:0})
-    //     .to ("#mywheel1", {duration:2, morphSVG: "#mywheel2"}, "+=1")
-
-
-
-    ;//tl END
-    return tl;
-
-  }
+  // }
 
 
 
@@ -331,9 +381,9 @@ gsap.set('#svg-container',{visibility:"visible"});
 
 //3. BUILD Main timeline
 mainTL
-.add(logomorphTL())
+// .add(logomorphTL())
 .add(fadeInTL())
-// .add(spaceshipTL(),"-=6")
+// .add(wigTL())
 // .add(liftOffTL())
 // .add(flightTL(),"target")
 
