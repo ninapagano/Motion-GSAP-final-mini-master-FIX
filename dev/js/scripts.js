@@ -121,6 +121,7 @@ ready(() => {
     .to("#circle2", {scale:3, duration:0.3, ease:"back", transformOrigin:"50% 100%"}, "circles")
     //fix
     .to("#circle3", {scale:3, x:"+=100", y:"-=100",  duration:0.3, ease:"back", transformOrigin:"50% 50%"}, "circles")
+    .to("#circle3",{fill:"#000", ease:"back"})
 
   // gears enter
     .from ("#speed", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.60")
@@ -130,25 +131,103 @@ ready(() => {
 
 
   .from ("#gearsquare", {scale:2, duration:1.5, transformOrigin:"center bottom"})
-  .to ("#gearsquare", {y:"+=100",duration:.7, transformOrigin:"center bottom"})
+  .to ("#gearsquare", {y:"+=100",duration:.7, fill: "#FFA500", transformOrigin:"center bottom"})
   // fill:#FF5200,
 
 
 // gearsquare and D turn orange
+.from ("#D", {alpha:0, fill: "#FFF"})
+.to ("#D", {fill: "#FFA500"})
+
+
 
 // gas icon flickers and goes yellow
 .from ("#gas-symbol", { duration:.2, transformOrigin:"50% 50%"})
-.to ("#gas-symbol", {alpha:1, duration:.5, scale:0.8, ease:"expo", transformOrigin:"50% 50%"})
-.to ("#gas-symbol", {alpha:1, duration:.5, scale:1, ease:"bounce", transformOrigin:"50% 50%"})
-// gas bubbles turn color staggered 1 at a time 
+.to ("#gas-symbol", {alpha:1, duration:.3, fill: "#FFA500", scale:0.8, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-symbol", {alpha:1, duration:.3, scale:1.2, ease:"bounce", transformOrigin:"50% 50%"})
+.to ("#gas-symbol", {alpha:1, duration:.3, fill: "#000", scale:1, ease:"bounce", transformOrigin:"50% 50%"})
 
-// gas-color1
+// gas bubbles turn color staggered 1 at a time 
+.from ("#gas-color1", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#gas-color1", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color2", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#gas-color2", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color3", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#gas-color3", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color4", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#gas-color4", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color5", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#gas-color5", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color6", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#gas-color6", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color7", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#gas-color7", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color8", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#gas-color8", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
 
 // speed dial rotates slowly
+
 .from ("#spinner", { duration:1.3, transformOrigin:"50% 50%"})
 .to ("#spinner", {alpha:1, duration:4, rotation:90, ease:"expo", transformOrigin:"50% 50%"})
 
+// .from ("#mywheel2", {transformOrigin:"50% 50%"},"mywheel2")
+// .to ("#mywheel2", {alpha:1, duration:2, rotation:360, ease:"bounce+=0.5", transformOrigin:"50% 50%"},"mywheel2")
+
+
+
+
 // speed bubbles turn color staggered 1 at a time 
+.from ("#scolor-1", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#scolor-1", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-2", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#scolor-2", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-3", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#scolor-3", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-4", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#scolor-4", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-5", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#scolor-5", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-6", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#scolor-6", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-7", { duration:1, transformOrigin:"50% 50%"})
+.to ("#scolor-7", {alpha:1, duration:1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+// speed wiggles and goes to base (spin and bubbles)
+.from ("#scolor-7", { duration:.1, transformOrigin:"50% 50%"})
+.to ("#scolor-7", {alpha:1, duration:.3, fill: "	#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-6", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#scolor-6", {alpha:1, duration:.3, fill: "	#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-5", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#scolor-5", {alpha:1, duration:.3, fill: "#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-4", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#scolor-4", {alpha:1, duration:.3, fill: "	#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-3", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#scolor-3", {alpha:1, duration:.3, fill: "	#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-2", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#scolor-2", {alpha:1, duration:.3, fill: "	#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#scolor-1", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#scolor-1", {alpha:1, duration:.3, fill: "	#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
 
 // speed wiggles and goes to base (spin and bubbles)
 .to ("#spinner", { duration:1, transformOrigin:"50% 50%"})
@@ -157,10 +236,39 @@ ready(() => {
 
 // gas goes to base (bubbles)
 
+
+.from ("#gas-color8", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#gas-color8", {alpha:1, duration:.3, fill: "#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color7", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#gas-color7", {alpha:1, duration:.3, fill: "#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color6", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#gas-color6", {alpha:1, duration:.3, fill: "#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color5", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#gas-color5", {alpha:1, duration:.3, fill: "#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color4", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#gas-color4", {alpha:1, duration:.3, fill: "#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color3", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#gas-color3", {alpha:1, duration:.3, fill: "#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color2", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#gas-color2", {alpha:1, duration:.3, fill: "#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+.from ("#gas-color1", { duration:.2, transformOrigin:"50% 50%"})
+.to ("#gas-color1", {alpha:1, duration:.3, fill: "#000000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
 // drive goes to base and goes back to white
 // .add("gearsquare", "-=0.5")
 .from ("#gearsquare", { duration:1})
-.to ("#gearsquare", {y:"-=100", ease:"bounce", duration: 1})
+.to ("#gearsquare", {y:"-=100",fill: "#ffffff", ease:"bounce", duration: 1})
+
+
+// .from ("#D", {alpha:0 })
+.to ("#D", {fill: "#fff"})
 
 // white background comes in
 
