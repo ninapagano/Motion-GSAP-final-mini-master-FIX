@@ -108,6 +108,24 @@ ready(() => {
     .to("#mywheel2", {scale: 0.5, transformOrigin:"center bottom"})
     .to("#mywheel1", {alpha:0, duration:0.2}, "mywheel2+=2")
 
+// seat belt
+
+
+    .from("#seatbelt", {alpha:0, duration:1, y:"+=150"})
+    .to ("#seatbelt", {y:"-=30", duration:.5})
+
+    // .from ("#arrow", { duration:.1, transformOrigin:"50% 50%"})
+    // .to ("#arrow", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+
+
+.to ("#arrow", {duration:.3, fill: "#CD5C5C",transformOrigin:"50% 50%"})
+
+    
+// degree
+
+.from("#degree", {alpha:0, duration:.5})
+.to("#degree", { duration:.5, scale:1.1, ease:"bounce", transformOrigin:"50% 50%"})
+
 // Dial circles Fade UP
     .from("#circle1", {alpha:0, duration:0.5, scale:0.25, ease:"expo"})
     .from("#circle2", {alpha:0, duration:0.6, scale:0.25, ease:"expo"})
@@ -117,60 +135,61 @@ ready(() => {
 // SECOND circles Fade UP
     // .to("#circle1", {alpha:0, y:"-=225", x:"-=150", duration:0.5, ease:"back"})
     // .to("#circle2", {alpha:0, y:"-=225", duration:0.5, ease:"back"})
-    .to("#circle1", {scale:3, x:"-=100", y:"+=100",  duration:0.3, ease:"back", transformOrigin:"100% 50%"}, "circles")
-    .to("#circle2", {scale:3, duration:0.3, ease:"back", transformOrigin:"50% 100%"}, "circles")
+    .to("#circle1", {alpha:0,scale:3, x:"-=100", y:"+=100",  duration:0.3, ease:"back", transformOrigin:"100% 50%"}, "circles")
+    .to("#circle2", {alpha:0, scale:3, duration:0.3, ease:"back", transformOrigin:"50% 100%"}, "circles")
     //fix
-    .to("#circle3", {scale:3, x:"+=100", y:"-=100",  duration:0.3, ease:"back", transformOrigin:"50% 50%"}, "circles")
-    .to("#circle3",{fill:"#000", ease:"back"})
+    .to("#circle3", {alpha:0, scale:3, x:"+=100", y:"-=20",  duration:0.3, ease:"back"}, "circles")
+   
 
   // gears enter
-    .from ("#speed", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.60")
-    .from("#gas", {alpha:0, duration:0.15, scale:0.5, transformOrigin:"50% 50%"}, "circles+=0.30" )
+    .from ("#speed", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.30")
+    .from("#gas", {alpha:0, duration:0.15, scale:0.5, transformOrigin:"50% 50%"}, "circles+=0.10" )
     //fix
-    .from("#gear", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.90")
+    .from("#gear", {alpha:0, duration:0.15, scale:1, transformOrigin:"50% 50%"}, "circles+=0.50")
 
 
   .from ("#gearsquare", {scale:2, duration:1.5, transformOrigin:"center bottom"})
-  .to ("#gearsquare", {y:"+=100",duration:.7, fill: "#FFA500", transformOrigin:"center bottom"})
+  .to ("#gearsquare", {y:"+=100",duration:.7, fill: "#CD5C5C", transformOrigin:"center bottom"})
   // fill:#FF5200,
 
 
 // gearsquare and D turn orange
 .from ("#D", {alpha:0, fill: "#FFF"})
-.to ("#D", {fill: "#FFA500"})
+.to ("#D", {fill: "#FF0000"})
+// FFA500
 
 
 
 // gas icon flickers and goes yellow
 .from ("#gas-symbol", { duration:.2, transformOrigin:"50% 50%"})
-.to ("#gas-symbol", {alpha:1, duration:.3, fill: "#FFA500", scale:0.8, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-symbol", {alpha:1, duration:.3, fill: "#CD5C5C", scale:0.8, ease:"expo", transformOrigin:"50% 50%"})
 .to ("#gas-symbol", {alpha:1, duration:.3, scale:1.2, ease:"bounce", transformOrigin:"50% 50%"})
 .to ("#gas-symbol", {alpha:1, duration:.3, fill: "#000", scale:1, ease:"bounce", transformOrigin:"50% 50%"})
 
 // gas bubbles turn color staggered 1 at a time 
 .from ("#gas-color1", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#gas-color1", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-color1", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#gas-color2", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#gas-color2", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-color2", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#gas-color3", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#gas-color3", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-color3", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#gas-color4", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#gas-color4", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-color4", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#gas-color5", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#gas-color5", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-color5", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#gas-color6", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#gas-color6", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-color6", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#gas-color7", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#gas-color7", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-color7", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#gas-color8", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#gas-color8", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-color8", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 
 // speed dial rotates slowly
@@ -186,25 +205,25 @@ ready(() => {
 
 // speed bubbles turn color staggered 1 at a time 
 .from ("#scolor-1", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#scolor-1", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#scolor-1", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#scolor-2", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#scolor-2", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#scolor-2", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#scolor-3", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#scolor-3", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#scolor-3", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#scolor-4", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#scolor-4", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#scolor-4", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#scolor-5", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#scolor-5", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#scolor-5", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#scolor-6", { duration:.1, transformOrigin:"50% 50%"})
-.to ("#scolor-6", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#scolor-6", {alpha:1, duration:.1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 .from ("#scolor-7", { duration:1, transformOrigin:"50% 50%"})
-.to ("#scolor-7", {alpha:1, duration:1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#scolor-7", {alpha:1, duration:1, fill: "#FF0000", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 // speed wiggles and goes to base (spin and bubbles)
 .from ("#scolor-7", { duration:.1, transformOrigin:"50% 50%"})
