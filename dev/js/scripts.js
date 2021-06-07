@@ -118,7 +118,7 @@ ready(() => {
     // .to ("#arrow", {alpha:1, duration:.1, fill: "#FF5200", scale:1.2, ease:"expo", transformOrigin:"50% 50%"})
 
 
-.to ("#arrow", {duration:.3, fill: "#CD5C5C",transformOrigin:"50% 50%"})
+.to ("#arrow", {duration:.3, fill: "#DD575E",transformOrigin:"50% 50%"})
 
     
 // degree
@@ -135,10 +135,10 @@ ready(() => {
 // SECOND circles Fade UP
     // .to("#circle1", {alpha:0, y:"-=225", x:"-=150", duration:0.5, ease:"back"})
     // .to("#circle2", {alpha:0, y:"-=225", duration:0.5, ease:"back"})
-    .to("#circle1", {alpha:0,scale:3, x:"-=100", y:"+=100",  duration:0.3, ease:"back", transformOrigin:"100% 50%"}, "circles")
-    .to("#circle2", {alpha:0, scale:3, duration:0.3, ease:"back", transformOrigin:"50% 100%"}, "circles")
+    .to("#circle1", {scale:3, x:"-=100", y:"+=100",  duration:0.5, ease:"back", transformOrigin:"100% 50%"}, "circles")
+    .to("#circle2", {scale:3, duration:0.5, ease:"back", transformOrigin:"50% 100%"}, "circles")
     //fix
-    .to("#circle3", {alpha:0, scale:3, x:"+=100", y:"-=20",  duration:0.3, ease:"back"}, "circles")
+    .to("#circle3", {scale:3, x:"+=100", y:"-=20",  duration:0.5, ease:"back"}, "circles")
    
 
   // gears enter
@@ -149,20 +149,20 @@ ready(() => {
 
 
   .from ("#gearsquare", {scale:2, duration:1.5, transformOrigin:"center bottom"})
-  .to ("#gearsquare", {y:"+=100",duration:.7, fill: "#CD5C5C", transformOrigin:"center bottom"})
+  .to ("#gearsquare", {y:"+=100",duration:.7, fill: "#DD575E", transformOrigin:"center bottom"})
   // fill:#FF5200,
 
 
 // gearsquare and D turn orange
 .from ("#D", {alpha:0, fill: "#FFF"})
-.to ("#D", {fill: "#FF0000"})
+.to ("#D", {fill: "#D3A1A3"})
 // FFA500
 
 
 
 // gas icon flickers and goes yellow
 .from ("#gas-symbol", { duration:.2, transformOrigin:"50% 50%"})
-.to ("#gas-symbol", {alpha:1, duration:.3, fill: "#CD5C5C", scale:0.8, ease:"expo", transformOrigin:"50% 50%"})
+.to ("#gas-symbol", {alpha:1, duration:.3, fill: "#DD575E", scale:0.8, ease:"expo", transformOrigin:"50% 50%"})
 .to ("#gas-symbol", {alpha:1, duration:.3, scale:1.2, ease:"bounce", transformOrigin:"50% 50%"})
 .to ("#gas-symbol", {alpha:1, duration:.3, fill: "#000", scale:1, ease:"bounce", transformOrigin:"50% 50%"})
 
