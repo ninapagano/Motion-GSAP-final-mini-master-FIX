@@ -49,10 +49,12 @@ ready(() => {
   // INTRO BASE
     gsap.set("#logo", {transformOrigin: "50% 50%"});
     gsap.set("#logowing", {transformOrigin: "50% 50%"});
-    gsap.set("#minitype", {transformOrigin: "50% 50%"});
+    gsap.set("#minitype", {scale:0.9, transformOrigin: "50% 50%"});
     gsap.set("#mywheel1", {transformOrigin: "50% 50%", alpha:0});
     gsap.set("#mywheel2", {transformOrigin: "50% 50%", alpha:0});
     gsap.set("#backgroundb1", {transformOrigin: "50% 50%"});
+    // gsap.set("#logowing1", {transformOrigin: "50% 50%"});
+    // gsap.set("#logowing2", {transformOrigin: "50% 50%"});
     // gsap.set("#backgroundw1", {transformOrigin: "50% 50%"});
     gsap.set("#logo2", {transformOrigin: "50% 50%"});
     // gsap.set("#speed", {transformOrigin: "center top", alpha:0});
@@ -90,13 +92,30 @@ ready(() => {
 
 
 // WHEEL1 FADE IN
-    tl.from("#logo", { duration:1, scale:1, ease:"back"}, "logo")
-    .to("#logo", {alpha:1, duration:2, ease:"bounce"}, "logo")
+    tl.from("#logo", {alpha:0, duration:1.5, scale:0.9})
+    // .from("#minitype", {alpha:0, duration:1.5}, "minitype")
+    .to("#minitype", {alpha:0, duration:.5, scale:0.7, ease:"expo"}, "minitype")
+    .to("#logo", {alpha:0, duration:2, scale:1, ease:"back"})
+    // .to("#logo", {transformOrigin:"50% 50%", duration:1.5})
+    // .to("#minitype", {alpha:0, duration:.2, scale:0.9})
+    // .to("#minitype", {alpha:0, duration:.5, scale:1, ease:"back"})
 
-    .add("logowing", "-=0.2")
-    .to ("#logowing", {alpha:1, duration:1, ease:"back", transformOrigin:"50% 50%"},"logowing")
-    .to("#logowing", {x:"+=1000"})
-    .to("#logo", {alpha:0, duration:1})
+// //  .add("logowing1", "-=0.2")
+//     .from("#logowing1", { alpha:0, duration:.2, ease:"back"})
+//     .to ("#logowing1", {alpha:0, duration:.2, ease:"back"})
+//     // .to("#logo", {alpha:0, duration:1})
+
+// // .add("logowing2", "-=0.2")
+//     .from ("#logowing2", {alpha:0, duration:.2 , ease:"back"})
+//     .to("#logowing2", {alpha:0, duration:.2, ease:"back"})
+
+// .from("#logowing", {alpha:0, duration:0.2, scale:0.9})
+// .to("#logowing", {alpha:0, duration:0.2,fill:"#000",scale:1, ease:"back"})
+
+    // .add("logowing", "-=0.6")
+    // .to ("#logowing", {alpha:1, duration:1, fill:"#000", ease:"back", transformOrigin:"50% 50%"},"logowing")
+    // .to("#logowing", {x:"+=1000"})
+    // .to("#logo", {alpha:0, duration:1})
     
     
     .from("#backgroundb1", {alpha:0, duration:1.5, ease:"expo"}, "backgroundb1")
@@ -123,8 +142,8 @@ ready(() => {
     
 // degree
 
-.from("#degree", {alpha:0, duration:.5})
-.to("#degree", { duration:.5, scale:1.1, ease:"bounce", transformOrigin:"50% 50%"})
+.from("#degree", {alpha:0, scale:0.5, duration:.5})
+.to("#degree", { duration:.5, scale:1, ease:"bounce", transformOrigin:"50% 50%"})
 
 // Dial circles Fade UP
     .from("#circle1", {alpha:0, duration:0.5, scale:0.25, ease:"expo"})
